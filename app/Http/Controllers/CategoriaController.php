@@ -22,7 +22,7 @@ class CategoriaController extends Controller
                 ->where('nombre','LIKE','%'.$query.'%')
                 ->where('condicion','=','1')
                 ->orderBy('idcategoria','desc')
-                ->paginate(7);
+                ->paginate(5);
             return view('almacen.categorias.index', ["categorias"=>$categorias, "searchText"=>$query]);
         }
     }
@@ -39,33 +39,30 @@ class CategoriaController extends Controller
         $categoria->descripcion=$request->get('descripcion');
         $categoria->condicion='1';
         $categoria->save();
-        //return redirect('almacen/categorias');
         return Redirect()->action('CategoriaController@index');
     }
 
-    public function show($id)
+    public function show(Categoria $categoria)
     {
-        return view("almacen.categorias.show",["categorias"=>Categoria::findOrFail($id)]);
+        //return view("almacen.categorias.show",["categorias"=>Categoria::findOrFail($id)]);
+        return view('almacen.categorias.show', compact('categoria'));
     }
 
-    public function edit($id)
+    public function edit(Categoria $categoria)
     {
-        return view("almacen.categorias.edit",["categorias"=>Categoria::findOrFail($id)]);
+        return view('almacen.categorias.edit', compact('categoria'));
     }
 
-    public function update(CategoriaRequest $request, $id)
+    public function update(CategoriaRequest $request, Categoria $categoria)
     {
-        $categoria = Categoria::findOrFail($id);
         $categoria->nombre=$request->get('nombre');
         $categoria->descripcion=$request->get('descripcion');
         $categoria->update();
-        //return redirect('almacen/categorias');
         return Redirect()->action('CategoriaController@index');
     }
 
-    public function destroy($id)
+    public function destroy(Categoria $categoria)
     {
-        $categoria = Categoria::findOrFail($id);
         $categoria->condicion='0';
         $categoria->update();
         return Redirect()->action('CategoriaController@index');
