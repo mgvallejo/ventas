@@ -35,6 +35,16 @@ Route::get('/almacen/articulos/{articulo}/edit', 'ArticuloController@edit')->nam
 Route::put('/almacen/articulos/{articulo}', 'ArticuloController@update')->name('articulos.update');
 Route::delete('/almacen/articulos/{articulo}', 'ArticuloController@destroy')->name('articulos.destroy');
 
+//Route::resource('venta/clientes', 'ClienteController');
+Route::get('/venta/clientes', 'ClienteController@index')->name('clientes.index');
+Route::get('/venta/clientes/create', 'ClienteController@create')->name('clientes.create');
+Route::post('/venta/clientes/', 'ClienteController@store')->name('clientes.store');
+Route::get('/venta/clientes/{persona}', 'ClienteController@show')->name('clientes.show');
+Route::get('/venta/clientes/{persona}/edit', 'ClienteController@edit')->name('clientes.edit');
+Route::put('/venta/clientes/{persona}', 'ClienteController@update')->name('clientes.update');
+Route::delete('/venta/clientes/{persona}', 'ClienteController@destroy')->name('clientes.destroy');
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

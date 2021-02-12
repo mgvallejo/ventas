@@ -233,7 +233,7 @@ return [
 
         [
             'text'    => 'Almacen',
-            'icon'    => 'fas fa-fw fa-share',
+            'icon'    => 'fas fa-fw fa-boxes',
             'submenu' => [
                 [
                     'text' => 'Categorias',
@@ -247,8 +247,8 @@ return [
         ],
 
         [
-            'text'    => 'Ventas',
-            'icon'    => 'fas fa-fw fa-share',
+            'text'    => 'Venta',
+            'icon'    => 'fas fa-fw fa-cart-arrow-down',
             'submenu' => [
                 [
                     'text' => 'Ventas',
