@@ -26,6 +26,15 @@ Route::get('/almacen/categorias/{categoria}/edit', 'CategoriaController@edit')->
 Route::put('/almacen/categorias/{categoria}', 'CategoriaController@update')->name('categorias.update');
 Route::delete('/almacen/categorias/{categoria}', 'CategoriaController@destroy')->name('categorias.destroy');
 
+//Route::resource('almacen/articulos', 'ArticuloController');
+Route::get('/almacen/articulos', 'ArticuloController@index')->name('articulos.index');
+Route::get('/almacen/articulos/create', 'ArticuloController@create')->name('articulos.create');
+Route::post('/almacen/articulos/', 'ArticuloController@store')->name('articulos.store');
+Route::get('/almacen/articulos/{articulo}', 'ArticuloController@show')->name('articulos.show');
+Route::get('/almacen/articulos/{articulo}/edit', 'ArticuloController@edit')->name('articulos.edit');
+Route::put('/almacen/articulos/{articulo}', 'ArticuloController@update')->name('articulos.update');
+Route::delete('/almacen/articulos/{articulo}', 'ArticuloController@destroy')->name('articulos.destroy');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
