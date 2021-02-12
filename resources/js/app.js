@@ -25,6 +25,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('eliminar-categoria', require('./components/EliminarCategoria.vue').default);
 Vue.component('eliminar-articulo', require('./components/EliminarArticulo.vue').default);
 Vue.component('eliminar-cliente', require('./components/EliminarCliente.vue').default);
+Vue.component('eliminar-proveedor', require('./components/EliminarProveedor.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

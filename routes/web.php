@@ -44,6 +44,14 @@ Route::get('/venta/clientes/{persona}/edit', 'ClienteController@edit')->name('cl
 Route::put('/venta/clientes/{persona}', 'ClienteController@update')->name('clientes.update');
 Route::delete('/venta/clientes/{persona}', 'ClienteController@destroy')->name('clientes.destroy');
 
+//Route::resource('compra/proveedores', 'ProveedorController');
+Route::get('/compra/proveedores', 'ProveedorController@index')->name('proveedores.index');
+Route::get('/compra/proveedores/create', 'ProveedorController@create')->name('proveedores.create');
+Route::post('/compra/proveedores/', 'ProveedorController@store')->name('proveedores.store');
+Route::get('/compra/proveedores/{persona}', 'ProveedorController@show')->name('proveedores.show');
+Route::get('/compra/proveedores/{persona}/edit', 'ProveedorController@edit')->name('proveedores.edit');
+Route::put('/compra/proveedores/{persona}', 'ProveedorController@update')->name('proveedores.update');
+Route::delete('/compra/proveedores/{persona}', 'ProveedorController@destroy')->name('proveedores.destroy');
 
 Auth::routes();
 

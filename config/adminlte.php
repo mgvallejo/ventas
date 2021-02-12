@@ -261,6 +261,21 @@ return [
             ]
         ],
 
+        [
+            'text'    => 'Compra',
+            'icon'    => 'fas fa-money-check-alt',
+            'submenu' => [
+                [
+                    'text' => 'Compras',
+                    'url'  => 'compra/compras',
+                ],
+                [
+                    'text' => 'Proveedores',
+                    'url'  => 'compra/proveedores',
+                ],
+            ]
+        ],
+
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
